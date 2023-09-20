@@ -25,10 +25,21 @@ public class Gaulois {
 	public void frapper(Romain romain) {
 		System.out.println(nom + " envoie un grand coup dans la mâchoire de "
 		+ romain.getNom());
-		romain.recevoirCoup(force / 3);
+//		System.out.println(((force / 3) * boirePotion(effetPotion)));
+		romain.recevoirCoup((force / 3)* boirePotion(effetPotion));
 	}
 	
-	@Override
+	public int boirePotion(int forcePotion) {
+		if (effetPotion == forcePotion) {
+			return effetPotion;
+		} else {
+			effetPotion = forcePotion;
+			System.out.println(prendreParole() + "Merci Druide, je sens que ma force est "
+			+ forcePotion + " fois décuplée." );
+			return effetPotion;
+		}
+	}
+	
 	public String toString() {
 		return "Gaulois [nom=" + nom + ", force=" + force
 		+ ", effetPotion=" + effetPotion + "]";
@@ -37,7 +48,6 @@ public class Gaulois {
 		Gaulois asterix = new Gaulois("Astérix", 8);
 		Romain potus = new Romain("Potus", 6);
 		
-		System.out.println(asterix);
 		asterix.prendreParole();
 		asterix.parler("je suis le gaulois le plus fier et le plus fort !");
 		asterix.frapper(potus);
