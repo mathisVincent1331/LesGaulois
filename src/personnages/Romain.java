@@ -3,10 +3,13 @@ package personnages;
 public class Romain {
 	private String nom;
 	private int force;
+	private Equipement[] equipements;
+	private int nbEquipements = 0;
 	
 	public Romain(String nom, int force) {
 		this.nom = nom;
 		this.force = force;
+		equipements = new Equipement[2];
 		assert isForceVerified();
 	}
 	
@@ -42,5 +45,7 @@ public class Romain {
 
 	public static void main(String[] args) {
 		Romain minus = new Romain("Minus", 6);
+		minus.recevoirCoup(2);
+		System.out.println(Equipement.BOUCLIER);
 	}
 }
