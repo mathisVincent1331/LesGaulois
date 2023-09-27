@@ -1,9 +1,6 @@
 package histoire;
 import personnages.Gaulois;
 import personnages.Romain;
-
-import java.util.Iterator;
-
 import personnages.Druide;
 
 public class Scenario {
